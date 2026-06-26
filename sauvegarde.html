@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Projet 4 (Site stage)
+const projet4 = document.querySelector('.projects-grid .project-card:nth-child(4)');
+if (projet4) {
+    projet4.addEventListener('click', () => {
+        // Remplace l'URL ci-dessous par le lien de ton site
+        iframe.src = "./SAE201-203/index.html"; 
+        viewer.style.display = "block";
+        setTimeout(() => {
+            viewer.classList.add('active');
+            document.body.style.overflow = "hidden";
+        }, 10);
+    });
+}
+    </script>
+
+    <h1>cartes</h1>
+
+    <div class="project-card" data-aos="flip-left" data-aos-delay="600">
+                    <div class="project-img">Projet 4</div>
+                    <h3>SAE 201 - 203 : Produire un site web avec une base de donnée</h3>
+                    <p>Site web avec base de donnée réalisé en HTML5, CSS3, JavaScript et SQL</p>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="800">
+                    <div class="project-img">Projet 5</div>
+                    <h3>Titre</h3>
+                    <p>Description</p>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="1000">
+                    <div class="project-img">Projet 6</div>
+                    <h3>Titre</h3>
+                    <p>Description</p>
+                </div>
+                <div class="project-card hidden js-aos" data-delay="200">
+                    <div class="project-img">Projet 7</div>
+                    <h3>Titre</h3>
+                    <p>Description</p>
+                </div>
+                <div class="project-card hidden js-aos" data-delay="400">
+                    <div class="project-img">Projet 8</div>
+                    <h3>Titre</h3>
+                    <p>Description</p>
+                </div>
+                <div class="project-card hidden js-aos" data-delay="600">
+                    <div class="project-img">Projet 9</div>
+                    <h3>Titre</h3>
+                    <p>Description</p>
+                </div>
+                <div class="project-card hidden js-aos" data-delay="800">
+                    <div class="project-img">Projet 10</div>
+                    <h3>Titre</h3>
+                    <p>Description</p>
+                </div>
+                <div class="project-card hidden js-aos" data-delay="1000">
+                    <div class="project-img">Projet 11</div>
+                    <h3>Titre</h3>
+                    <p>Description</p>
+                </div>
+                <div class="project-card hidden js-aos" data-delay="1200">
+                    <div class="project-img">Projet 12</div>
+                    <h3>Titre</h3>
+                    <p>Description</p>
+                </div>
+            </div>
+            </div> <div class="load-more-container" data-aos="fade-up">
+            <button id="load-more-btn">Voir plus de projets</button>
+        </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="FR">
+    <Head>
+        <meta charset="UTF-8">
+        <title>EVASION - Votre voyage à porté de main</title>
+        <link rel="stylesheet" href="style_projet2.css">
+    </Head>
+    <body>
+        <header>
+        <a href="index_projet2.html"><img src="logo_evasion.png" class="logo"></a>
+        <h1>Evasion</h1>
+        <nav>
+            <ul class="navigation">
+                <ul><a href="index_projet2.html" class="nav-link">Acceuil</a></ul>
+                <ul><a href="nos_sites.html" class="nav-link">Nos sites</a></ul>
+                <ul><a href="avis.html" class="nav-link active">Avis</a></ul>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="img-container">
+                <img src="https://cdn.pixabay.com/photo/2017/07/09/17/22/beach-2487585_960_720.jpg" alt="Image Paradisiaque" class="img_fond">
+            </div>
+        </section>
+        <section class="formulaire">
+            <h2 id="h2_avis">Laissez-nous un avis !</h2>
+            <form action="recu.html" method="post">
+                <fieldset>
+                    <legend>Fiche de contact</legend>
+                    <div class="section">
+                        <div class="form-group">
+                            <label form="nom">Nom:</label>
+                            <input type="text" placeholder="Votre nom" required id="nom" name="nom">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="section">
+                        <div class="form-group">
+                            <label form="nom">Prénom:</label>
+                            <input type="text" placeholder="Votre prénom" required id="prenom" name="prenom">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="section">
+                        <div class="form-group">
+                            <label form="date">Date de naissance:</label>
+                            <input type="date" placeholder="date" required id="date" value="2000-01-01" name="date">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="section">
+                        <div class="form-group">
+                            <label form="mail">Adresse e-mail:</label>
+                            <input type="mail" placeholder="Votre adresse e-mail" required id="mail" name="email">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="section">
+                        <div class="form-group">
+                            <label form="code_postal">Code postal:</label>
+                            <input type="text" placeholder="Votre code postal" required id="code_postal" pattern="[0-9]{5}" title="Un code postal à 5 chiffres est attendu" name="code_postal">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="section">
+                        <div class="form-group">
+                            <label form="tel">Téléphone portable</label>
+                            <input name="telephone" type="text" placeholder="06 01 23 45 67" id="tel" pattern="^(06|07)[0-9]{8}$" title="Numéro à 10 chiffres sans espace et commençant par 06 ou 07">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Votre avis</legend>
+                    <div class="section">
+                        <div class="form-group">
+                            <p>Qu'aimez-vous le plus ?</p>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="form-group">
+                            <input type="radio" required id="us" name="voyage">
+                            <label form="us">Statue de la liberté</label>
+                            <input type="radio" required id="jp" name="voyage">
+                            <label form="jp">Le Mont Fuji</label>
+                            <input type="radio" required id="ph" name="voyage">
+                            <label form="ph">Banaue</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="section">
+                        <div class="form-group">
+                            <textarea id="" rows="5" cols="50" placeholder="Que pensez-vous de ce voyage ?" name="avis"></textarea>       
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="section">
+                    <div class="form-group">
+                        <button type="reset" class="clear-btn">Effacer</button>
+                        <button type="submit" class="send-btn">Envoyer</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="foot">
+            <h3>Organisé par VP Tours - @2025</h3>
+        </div>
+    </footer>
+    </body>
+</html>

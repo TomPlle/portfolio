@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio | BUT MMI</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="neon-bg"></canvas>
+    <div class="loader">
+        <span class="lettre">C</span>
+        <span class="lettre">H</span>
+        <span class="lettre">A</span>
+        <span class="lettre">R</span>
+        <span class="lettre">G</span>
+        <span class="lettre">E</span>
+        <span class="lettre">M</span>
+        <span class="lettre">E</span>
+        <span class="lettre">N</span>
+        <span class="lettre">T</span>
+
+        <div class="progress-line-container">
+        <div class="progress-bar"></div>
+    </div>
+    </div>
+    <nav>
+        <div class="logo" id="main-logo">
+            <span class="logo-name">Tom</span>
+            <span class="logo-dot">.</span>
+            <span class="logo-type" id="logo-type">Dev</span>
+        </div>
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Mes compétences</a></li>
+            <li><a href="#cv">Mon CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header id="home">
+        <div class="hero-content" data-aos="zoom-in">
+            <h1>Bonjour, moi c'est <span class="highlight">Tom Pelloile</span></h1>
+            <p>Concevoir. Coder. Innover. Exploration de l'univers <span class="highlight">Front-End</span> et de la <span class="highlight">création numérique</span>.</p>
+            <a href="#about" class="btn">Découvrez moi !</a>
+        </div>
+    </header>
+    <section id="about">
+        <div class="about-container">
+            <div class="about-left" data-aos="fade-right">
+                <div class="profile-img-wrapper">
+                    <img src="./Image/photo_de_profil.png" alt="Tom Pelloile" class="profile-img">
+                </div>
+            </div>
+            <div class="about-right" data-aos="fade-left">
+                <h2 class="section-title">À propos de moi</h2>
+                <br>   
+                <div class="about-card">
+                    <h3><i class="fas fa-user-graduate"></i> Mon Parcours</h3>
+                    <p>Actuellement étudiant en première année de <strong>BUT MMI</strong> (Métiers du Multimédia et de l'Internet), j'ai développé une solide base technique en autodidacte avant d'approfondir mes connaissances académiques. Passionné par l'écosystème numérique, je combine curiosité et rigueur pour mener à bien mes projets.</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-lightbulb"></i> Pourquoi le MMI ?</h3>
+                    <p>J'ai choisi cette formation pour sa <strong>polyvalence unique</strong>. Le MMI me permet d'explorer l'intersection entre la logique du développement Web, la créativité du design graphique et la force de la communication visuelle. C'est ce mélange de compétences qui me passionne au quotidien.</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-rocket"></i> Au-delà du code</h3>
+                    <p>Passionné par la <strong>culture tech</strong> et le design minimaliste, j'aime explorer de nouvelles technologies. Quand je ne code pas, je m'intéresse de près à la production audiovisuelle et au montage, ce qui nourrit ma vision créative sur chaque projet.</p>
+                </div> 
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2 data-aos="fade-up">Mes Projets Académiques</h2>
+        <div class="projects-grid">
+            <div class="project-card" data-aos="flip-left">
+                <div class="project-img">Projet 1</div>
+                    <h3>SAE 103 : Design Graphique</h3>
+                    <p>Design d'un article réalisé avec les logiciels Photoshop et Indesign</p>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="project-img">Projet 2</div>
+                    <h3>SAE 104 :  Production Audiovisuelle</h3>
+                    <p>Tuto réalisé tourné et monté sur le logiciel PremièrePro</p>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="project-img">Projet 3</div>
+                    <h3>SAE 105 : Produire un site web</h3>
+                    <p>Site web réalisé en HTML5 et CSS</p>
+                </div>
+    </section>
+    </section>
+    <section id="skills">
+        <h2 data-aos="fade-up">Mes Compétences</h2>
+        <div class="skills-container">
+            <div class="skill-category" data-aos="fade-up">
+                <h3><i class="fas fa-code"></i> Développement</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Figma</span>
+                </div>
+            </div>
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fas fa-paint-brush"></i> Design Graphique</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Photoshop</span>
+                    <span class="skill-tag">Illustrator</span>
+                    <span class="skill-tag">Indesign</span>
+                </div>
+            </div>
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <h3><i class="fas fa-video"></i> Audiovisuel</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Premiere Pro</span>
+                    <span class="skill-tag">Prise de son</span>
+                    <span class="skill-tag">Prise de vue</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cv">
+        <h2 data-aos="fade-up">Curriculum Vitae</h2>
+        <div class="cv-container" data-aos="fade-right">
+            <div class="cv-preview">
+                <p>Prévisualisation du CV</p>
+                <br>
+                <img src="./Image/CV_preview.jpg" alt="Aperçu CV">
+            </div>
+            <div class="cv-action">
+                <p>Envie d'en savoir plus sur mon parcours ?</p>
+                <a href="./Image/CV.pdf" download class="btn">Télécharger le CV (PDF)</a>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2 data-aos="fade-up">Me Contacter</h2>
+        <form id="contact-form" data-aos="fade-up" action="contact.php" method="POST">
+            <input type="text" placeholder="Nom" name="name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <textarea placeholder="Votre message" rows="5" name="message" required></textarea>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2026 - Portfolio de Tom Pelloile - BUT MMI 1</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/tom-pelloile-548193357" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/tom_plle/" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:tompelloile6@gmail.com" title="Email" target="_blank">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </footer>
+    <div id="project-viewer" class="project-overlay">
+    <button class="close-project">&times; Fermer le projet</button>
+    <div class="iframe-container">
+        <iframe id="project-iframe" src="" frameborder="0"></iframe>
+    </div>
+    </div>
+    <div id="video-viewer" class="project-overlay">
+    <button class="close-video">&times; Fermer la vidéo</button>
+    <div class="video-container">
+        <video id="project-video" controls>
+            <source src="" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+    </div>
+</div>
+<div id="pdf-viewer" class="project-overlay">
+    <button class="close-pdf">&times; Fermer le PDF</button>
+    <div class="iframe-container">
+        <iframe id="pdf-iframe" src="" frameborder="0"></iframe>
+    </div>
+</div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./JS/script.js"></script>
+</body>
+</html>

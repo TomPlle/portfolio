@@ -1,0 +1,719 @@
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: line;
+}
+
+.lettre {
+    color: #484848;
+    font-size: 80px;
+    letter-spacing: 15px;
+    margin-bottom: 150px;
+    animation: flash 1.2s linear infinite;
+}
+
+@keyframes flash {
+    0% {
+        color: #6c5ce7;
+        text-shadow: 0 0 7 #6c5ce7;
+
+    }
+    90% {
+        color : #484848;
+        text-shadow: none;
+    }
+    100% {
+        color: #6c5ce7;
+        text-shadow: 0 0 7px #6c5ce7;
+    }
+}
+
+.lettre:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.lettre:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.lettre:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.lettre:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.lettre:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.lettre:nth-child(6) {
+    animation-delay: 0.6s;
+}
+.lettre:nth-child(7) {
+    animation-delay: 0.7s;
+}
+.lettre:nth-child(8) {
+    animation-delay: 0.8s;
+}
+.lettre:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+.fondu-out {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    pointer-events: none;
+}
+
+
+:root {
+    --primary: #6c5ce7;
+    --bg: #0f0c29;
+    --text: #ffffff;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 12, 41, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
+nav ul li a:hover { color: var(--primary); }
+
+/* Sections */
+header, section {
+    min-height: 100vh;
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.highlight { color: var(--primary); }
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.4);
+}
+
+/* Grille de Projets */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.project-card {
+    background: var(--glass);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.project-card:hover { background: rgba(255, 255, 255, 0.2); }
+
+.project-img {
+    height: 150px;
+    background: #444;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* CV */
+.cv-container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.cv-preview img {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: var(--glass);
+    color: white;
+}
+
+.progress-line-container {
+    position: absolute; 
+    /* On la place à 55% de la hauteur pour qu'elle soit sous les lettres */
+    top: 55%; 
+    width: 400px; /* Largeur de la ligne */
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #6c5ce7;
+    box-shadow: 0 0 10px #6c5ce7;
+    transition: width 0.1s linear;
+}
+
+
+/*Effet smooth*/
+.project-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    z-index: 10000; /* Au-dessus de la nav */
+    display: none; /* Caché par défaut */
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-overlay.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.iframe-container {
+    width: 100%;
+    height: 100%;
+    padding-top: 60px; /* Espace pour le bouton fermer */
+}
+
+#project-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.close-project {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+    z-index: 10001;
+    transition: 0.3s;
+}
+
+.close-project:hover {
+    transform: scale(1.1);
+    background: #5649c0;
+}
+
+/* Container spécifique pour que la vidéo garde son ratio */
+#project-video {
+    /* On définit la largeur et la hauteur sur 75% du viewport */
+    width: 75vw; 
+    height: 75vh;
+    
+    /* object-fit: cover permet à la vidéo de remplir l'espace sans déformation */
+    /* Si tu préfères voir toute la vidéo sans rognage, utilise 'contain' */
+    object-fit: contain; 
+    
+    border-radius: 15px;
+    background: #000; /* Fond noir pour les bords si la vidéo est contain */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* On s'assure que le container n'ajoute pas de scroll inutile */
+.video-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.close-video {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.close-pdf {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 10001;
+    transition: 0.3s;
+}
+
+/* On cible spécifiquement le container du PDF dans l'overlay */
+#pdf-viewer .iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* L'iframe PDF prend 75% de la largeur et de la hauteur de l'écran */
+#pdf-iframe {
+    width: 75vw;
+    height: 75vh;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    background-color: #333; /* Couleur de fond en attendant le chargement */
+}
+
+.cv-preview img {
+    /* Augmente la largeur (ex: de 200px à 500px) */
+    width: 100%; 
+    max-width: 600px; /* C'est ici que tu règles la taille maximale */
+    
+    /* Optionnel : ajoute du style pour que ça rende bien en grand */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Petit effet de zoom au survol pour le côté MMI */
+.cv-preview img:hover {
+    transform: scale(1.02);
+}
+
+/* Cache les projets par défaut */
+.project-card.hidden {
+    display: none;
+}
+
+/* Style du bouton Voir Plus */
+.load-more-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#load-more-btn {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+#load-more-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Pour s'assurer qu'il n'y a que 3 projets par ligne sur desktop */
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.project-card.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* On force les 3 colonnes sur PC */
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/*TEST*/
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--text);
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
+    user-select: none; /* Empêche la sélection du texte */
+}
+
+.logo-dot {
+    color: var(--primary); /* Ton violet #6c5ce7 */
+    position: relative;
+    display: inline-block;
+}
+
+.logo-type {
+    color: var(--primary);
+    font-weight: 300; /* Plus fin pour le contraste */
+    margin-left: 2px;
+    position: relative;
+}
+
+/* Le curseur clignotant pour l'effet de dactylographie */
+.logo-type::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    color: var(--text);
+    animation: blink 0.7s infinite;
+    opacity: 0; /* Caché par défaut */
+}
+
+.logo.typing .logo-type::after {
+    opacity: 1; /* Visible pendant la dactylographie */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Classe d'animation JS pour le point rebondissant */
+.bounce {
+    animation: bounceDot 0.5s ease;
+}
+
+@keyframes bounceDot {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Cache le logo totalement au chargement */
+#main-logo {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Transition douce pour l'apparition */
+}
+
+/* Style du Canvas Néon */
+#neon-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Derrière tout, même derrière le body::before vignette */
+    pointer-events: none; /* Laisse passer les clics */
+    background: transparent; /* Pour voir ton dégradé CSS à travers */
+    mix-blend-mode: screen; /* Fusionne les lueurs avec le dégradé du fond */
+    filter: blur(0.5px); /* Adoucit les bords pour un look moins "numérique" */
+}
+
+/* On s'assure que le vignette est bien au-dessus du canvas */
+body::before {
+    z-index: -1; 
+}
+
+/*TEST*/
+#skills {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.skills-container {
+    display: grid;
+    /* Force 3 colonnes sur les grands écrans */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* Important : Adaptation pour les téléphones */
+@media (max-width: 992px) {
+    .skills-container {
+        /* Repasse en colonnes sur tablette/mobile pour que ça reste lisible */
+        grid-template-columns: 1fr; 
+    }
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(108, 92, 231, 0.2);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    /* Assure que toutes les cartes ont la même hauteur même si le texte diffère */
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
+    border-color: #6c5ce7;
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.4);
+}
+
+.skill-category h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.skill-category i {
+    color: #6c5ce7;
+    margin-right: 10px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-tag {
+    background: rgba(108, 92, 231, 0.1);
+    color: #efefef;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    transition: 0.3s;
+}
+
+.skill-tag:hover {
+    background: #6c5ce7;
+    color: white;
+    box-shadow: 0 0 15px #6c5ce7;
+    cursor: default;
+}
+
+footer {
+    padding: 40px 10%;
+    background: rgba(15, 12, 41, 0.9);
+    border-top: 1px solid rgba(108, 92, 231, 0.2);
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.social-links a {
+    color: var(--text);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Effet Néon au survol */
+.social-links a:hover {
+    color: var(--primary);
+    transform: translateY(-5px);
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+}
+
+/* Responsive : alignement horizontal sur tablette/PC */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* --- SECTION À PROPOS --- */
+#about {
+    padding: 100px 10%;
+    background: transparent; /* Laisse voir le background animé */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image de profil */
+.about-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(45deg, var(--primary), #a29bfe);
+    box-shadow: 0 0 30px rgba(108, 92, 231, 0.5);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover est OBLIGATOIRE pour que object-position fonctionne */
+    object-fit: cover; 
+    
+    /* MODIFICATION : Aligne l'image horizontalement au centre (50%) */
+    /* et verticalement vers le bas (100%) */
+    object-position: center top; /* ou 50% 100% */
+    
+    border-radius: 50%;
+    border: 4px solid var(--bg);
+    transition: object-position 0.3s ease; /* Optionnel : pour une transition douce */
+}
+
+/* Texte à droite */
+.about-right {
+    flex: 1.5;
+    text-align: left;
+}
+
+.about-right .section-title {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.about-card {
+    background: var(--glass);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--primary);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.about-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-right {
+        text-align: center;
+    }
+    
+    .about-right .section-title {
+        text-align: center;
+    }
+    
+    .about-card {
+        border-left: none;
+        border-top: 4px solid var(--primary);
+    }
+}
+
